@@ -24,6 +24,7 @@ menu() {
 9. Edit Workspace-Rules
 10. Edit Default-Settings
 11. Edit Default-Keybinds
+12. Edit Neovim
 EOF
 }
 
@@ -44,6 +45,7 @@ main() {
         9) file="$UserConfigs/WorkspaceRules.conf" ;;
         10) file="$configs/Settings.conf" ;;
         11) file="$configs/Keybinds.conf" ;;
+        12) file="~/.config/nvim/lua/plugins/init.lua" ;;
         *) return ;;  # Do nothing for invalid choices
     esac
 

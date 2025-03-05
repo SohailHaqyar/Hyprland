@@ -9,7 +9,7 @@ SCRIPTSDIR="$HOME/.config/hypr/scripts"
 # variables
 focused_monitor=$(hyprctl monitors | awk '/^Monitor/{name=$2} /focused: yes/{print name}')
 # swww transition config
-FPS=60
+FPS=120
 TYPE="any"
 DURATION=2
 BEZIER=".43,1.19,1,.4"
@@ -69,10 +69,10 @@ main() {
   # Random choice case
   if [[ "$choice" == "$RANDOM_PIC_NAME" ]]; then
 	swww img -o "$focused_monitor" "$RANDOM_PIC" $SWWW_PARAMS;
-    sleep 2
-    "$SCRIPTSDIR/WallustSwww.sh"
-    sleep 0.5
-    "$SCRIPTSDIR/Refresh.sh"
+    # sleep 2
+    # "$SCRIPTSDIR/WallustSwww.sh"
+    # sleep 0.5
+    # "$SCRIPTSDIR/Refresh.sh"
     exit 0
   fi
 
@@ -94,17 +94,17 @@ main() {
   fi
 }
 
-# Check if rofi is already running
-if pidof rofi > /dev/null; then
-  pkill rofi
-  sleep 1  # Allow some time for rofi to close
-fi
+# # Check if rofi is already running
+# if pidof rofi > /dev/null; then
+#   pkill rofi
+#   sleep 1  # Allow some time for rofi to close
+# fi
 
 main
 
-sleep 1.5
-"$SCRIPTSDIR/WallustSwww.sh"
-
-sleep 0.5
-"$SCRIPTSDIR/Refresh.sh"
+# sleep 1.5
+# "$SCRIPTSDIR/WallustSwww.sh"
+#
+# sleep 0.5
+# "$SCRIPTSDIR/Refresh.sh"
 
