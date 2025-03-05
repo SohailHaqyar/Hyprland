@@ -1,0 +1,1 @@
+Hyprland conf on Arch
